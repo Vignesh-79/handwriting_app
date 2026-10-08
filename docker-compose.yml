@@ -1,0 +1,10 @@
+services:
+  handwriting:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - models:/models   # caches downloaded models so they download only once
+    restart: unless-stopped
+volumes:
+  models:
